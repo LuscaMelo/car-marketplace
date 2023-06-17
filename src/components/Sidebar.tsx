@@ -3,7 +3,7 @@ import { AiFillHome, AiOutlineUser, AiOutlineHeart, AiOutlineSetting } from 'rea
 
 export const Sidebar = () => {
 
-    const icons = [<AiFillHome key={1} />, <AiOutlineUser key={2} />, <AiOutlineHeart key={3} />, <AiOutlineSetting key={4} />]
+    const icons: React.JSX.Element[] = [<AiFillHome key={1} />, <AiOutlineUser key={2} />, <AiOutlineHeart key={3} />, <AiOutlineSetting key={4} />]
 
     return (
         <div className='flex items-center justify-end md:justify-center pr-6 md:pr-0 h-full w-full text-2xl z-10'>

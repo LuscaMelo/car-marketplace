@@ -14,11 +14,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className='md:flex'>
-          <nav className='bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
+          <nav className='bg-dark md:bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
             <Sidebar />
           </nav>
           {children}

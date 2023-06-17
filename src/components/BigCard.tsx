@@ -1,9 +1,10 @@
+import Image from 'next/image'
 import React from 'react'
 
 export const BigCard = () => {
     return (
         <div className='h-full bg-secondary rounded-3xl overflow-hidden'>
-            <img className='rounded-3xl hover:scale-[1.03] duration-300' src="tesla.jpg" alt="tesla car image" />
+            <Image height={600} width={600} className='rounded-3xl hover:scale-[1.03] duration-300' src="/tesla.jpg" alt="tesla car image" />
             <div className='p-8'>
                 <div>
                     <h3 className='text-3xl md:text-5xl mb-2'>Tesla Model S</h3>
