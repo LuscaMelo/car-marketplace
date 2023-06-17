@@ -1,18 +1,31 @@
-import React from 'react'
-import { AiFillHome, AiOutlineUser, AiOutlineHeart, AiOutlineSetting } from 'react-icons/ai'
+"use client"
+
+import React, { useState } from 'react'
+import { AiFillHome, AiOutlineUser, AiOutlineHeart, AiOutlineSetting, AiFillHeart } from 'react-icons/ai'
+import FavoriteContext from '@/contexts/FavoriteContext'
+import { useContext } from 'react'
 
 export const Sidebar = () => {
 
-    const icons: React.JSX.Element[] = [<AiFillHome key={1} />, <AiOutlineUser key={2} />, <AiOutlineHeart key={3} />, <AiOutlineSetting key={4} />]
+    const { isFavorite, handleLike } = useContext(FavoriteContext)
 
     return (
         <div className='flex items-center justify-end md:justify-center pr-6 md:pr-0 h-full w-full text-2xl z-10'>
             <ul className='flex md:flex-col gap-1 md:gap-7 text-gray-400'>
-                {icons.map((icon, index) => (
-                    <li key={index} className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>
-                        {icon}
-                    </li>
-                ))}
+                <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>
+                    <AiFillHome />
+                </li>
+                <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>
+                    <AiOutlineUser />
+                </li>
+                <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300' onClick={handleLike}>
+                    {
+                        isFavorite ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
+                    }
+                </li>
+                <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>
+                    <AiOutlineSetting />
+                </li>
             </ul>
 
         </div>

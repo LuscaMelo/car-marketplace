@@ -1,24 +1,30 @@
 "use client"
 
 import Image from 'next/image'
+import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import FavoriteContext from '@/contexts/FavoriteContext'
 import { useContext, useState } from 'react'
-import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
+interface iProps {
+    image: string,
+    name: string,
+    type: string,
+    ratio: number
+}
 
-export const SmallCard = (props: { image: string, name: string, type: string, ratio: number }) => {
+export const SmallCard = (props: iProps) => {
 
-    const [like, setLike] = useState(Boolean)
+    const [isLiked, setIsLiked] = useState(false)
 
     const handleLike = () => {
-        setLike(!like)
+        setIsLiked(!isLiked)
     }
 
     return (
         <div className="relative w-[100%] bg-secondary rounded-3xl overflow-hidden h-[280px] cursor-pointer" >
             <div className="absolute top-3 left-3 rounded-full p-2 bg-light cursor-pointer text-xl z-40" onClick={handleLike}>
                 {
-                    like ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
+                    isLiked ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
                 }
             </div>
             <Image fill className="w-full object-cover rounded-3xl" src={props.image} alt="volvo ex30 image" />

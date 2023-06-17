@@ -1,11 +1,27 @@
+"use client"
+
 import { BigCard } from '@/components/BigCard'
 import { SmallCard } from '@/components/SmallCard'
 import { AiOutlinePlus } from 'react-icons/ai'
-import cars from '../mocks/cars.json'
+import { cars } from '../mocks/cars'
+import { useState } from 'react'
 
 export default function Home() {
 
-  const carFilters: string[] = ['All Cars', 'Electric', 'Gasoline', 'Hybrids']
+  const carFilters: string[] = ['All Cars', 'Electric', 'Gasoline', 'Hybrid']
+
+  const [carList, setCarList] = useState(cars)
+
+  const filterCars = (e: any) => {
+    let carsFiltered = carList.filter(car => car.type == e.target.innerText)
+
+    if (e.target.innerText == 'All Cars') {
+      setCarList(cars)
+    } else {
+      setCarList(carsFiltered)
+    }
+  }
+
 
   return (
     <main className="xl:flex md:w-[88%]">
@@ -24,7 +40,7 @@ export default function Home() {
           <ul className="flex flex-wrap gap-2 mt-10 md:mb-0 items-center">
             {carFilters.map((carFilter, index) => (
               <li key={index}>
-                <button className="bg-light text-sm md:text-md lg:text-lg p-2 px-8 rounded-full">{carFilter}</button>
+                <button className='bg-light text-sm md:text-md lg:text-lg p-2 px-8 rounded-full' onClick={filterCars}>{carFilter}</button>
               </li>
             ))}
             <li>
@@ -36,7 +52,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 mt-8 w-full px-7 md:px-0">
           {
-            cars.map(car => (
+            carList.map(car => (
               <SmallCard key={car.id} image={car.image} name={car.name} type={car.type} ratio={car.ratio} />
             ))
           }
