@@ -36,7 +36,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 mt-8 w-full">
           <SmallCard image="volvo-ex30.jpg" name='Volvo EX30' type='Electric' ratio={4.8} />
           <SmallCard image="volvo-xc90.jpg" name='Volvo XC90' type='Gasoline' ratio={4.7} />
-          <SmallCard image="volvo-xc60.avif" name='Volvo XC60' type='Electric' ratio={4.9} />
+          <SmallCard image="volvo-xc60.jpg" name='Volvo XC60' type='Electric' ratio={4.9} />
         </div>
       </section>
 
