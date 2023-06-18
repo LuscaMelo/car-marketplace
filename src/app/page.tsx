@@ -22,16 +22,11 @@ export default function Home() {
   }
 
   const changeBg = (e: any) => {
-    e.target.classList.remove('bg-light')
-    e.target.classList.add('bg-electric')
-    e.target.classList.add('text-black')
-
+    e.target.classList.add('active')
   }
 
   const removeBg = (e: any) => {
-    e.target.classList.remove('bg-electric')
-    e.target.classList.remove('text-black')
-    e.target.classList.add('bg-light')
+    e.target.classList.remove('active')
   }
 
 
