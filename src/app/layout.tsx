@@ -19,19 +19,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  const [isFavorite, setIsFavorite] = useState(false)
-
   return (
     <html lang="en">
       <body className={inter.className}>
-        <FavoriteContext.Provider value={{ setIsFavorite, isFavorite }}>
-          <div className='md:flex'>
-            <nav className='bg-dark md:bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
-              <Sidebar />
-            </nav>
-            {children}
-          </div>
-        </FavoriteContext.Provider>
+        <div className='md:flex'>
+          <nav className='bg-dark md:bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
+            <Sidebar />
+          </nav>
+          {children}
+        </div>
       </body>
     </html>
   )
