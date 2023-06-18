@@ -2,8 +2,7 @@
 
 import Image from 'next/image'
 import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import FavoriteContext from '@/contexts/FavoriteContext'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 
 interface iProps {
     image: string,

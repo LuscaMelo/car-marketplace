@@ -22,17 +22,17 @@ export const cars = [
     },
     {
         id: "4",
-        name: "Volvo XC60",
-        type: "Hybrid",
-        ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        name: "Corvette z06",
+        type: "Gasoline",
+        ratio: 4.5,
+        image: "/corvette.jpg"
     },
     {
         id: "5",
-        name: "Volvo XC60",
-        type: "Hybrid",
-        ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        name: "Toyota GR86",
+        type: "Gasoline",
+        ratio: 4.8,
+        image: "/gr86.jpg"
     },
     {
         id: "6",
