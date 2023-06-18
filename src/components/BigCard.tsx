@@ -3,7 +3,7 @@ import React from 'react'
 
 export const BigCard = () => {
     return (
-        <div className='h-full bg-secondary rounded-3xl overflow-hidden'>
+        <div className=' bg-secondary rounded-3xl overflow-hidden'>
             <Image height={600} width={1000} className='rounded-3xl hover:scale-[1.03] duration-300' src="/tesla.jpg" alt="tesla car image" />
             <div className='p-8'>
                 <div>

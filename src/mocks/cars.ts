@@ -19,5 +19,47 @@ export const cars = [
         type: "Electric",
         ratio: 4.9,
         image: "/volvo-xc60.jpg"
-    }
+    },
+    {
+        id: "4",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
+    {
+        id: "5",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
+    {
+        id: "6",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
+    {
+        id: "7",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
+    {
+        id: "8",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
+    {
+        id: "9",
+        name: "Volvo XC60",
+        type: "Hybrid",
+        ratio: 4.9,
+        image: "/volvo-xc60.jpg"
+    },
 ]

@@ -12,14 +12,26 @@ export default function Home() {
 
   const [carList, setCarList] = useState(cars)
 
-  const filterCars = (e: any) => {
-    let carsFiltered = carList.filter(car => car.type == e.target.innerText)
-
-    if (e.target.innerText == 'All Cars') {
+  const filterCars = (carFilter: string) => {
+    const carsFiltered = cars.filter(car => car.type == carFilter)
+    if (carsFiltered.length == 0) {
       setCarList(cars)
     } else {
       setCarList(carsFiltered)
     }
+  }
+
+  const changeBg = (e: any) => {
+    e.target.classList.remove('bg-light')
+    e.target.classList.add('bg-electric')
+    e.target.classList.add('text-black')
+
+  }
+
+  const removeBg = (e: any) => {
+    e.target.classList.remove('bg-electric')
+    e.target.classList.remove('text-black')
+    e.target.classList.add('bg-light')
   }
 
 
@@ -40,7 +52,7 @@ export default function Home() {
           <ul className="flex flex-wrap gap-2 mt-10 md:mb-0 items-center">
             {carFilters.map((carFilter, index) => (
               <li key={index}>
-                <button className='bg-light text-sm md:text-md lg:text-lg p-2 px-8 rounded-full' onClick={filterCars}>{carFilter}</button>
+                <button className='bg-light text-sm md:text-md lg:text-lg p-2 px-8 rounded-full' onClick={() => filterCars(carFilter)} onFocus={(e) => changeBg(e)} onBlur={(e) => removeBg(e)}>{carFilter}</button>
               </li>
             ))}
             <li>
