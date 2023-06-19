@@ -4,25 +4,35 @@ import { BigCard } from '@/components/BigCard'
 import { SmallCard } from '@/components/SmallCard'
 import { AiOutlinePlus } from 'react-icons/ai'
 import { cars } from '../mocks/cars'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
 
   const carFilters: string[] = ['All Cars', 'Electric', 'Gasoline', 'Hybrid']
 
   const [carList, setCarList] = useState(cars)
-  const [bgColor, setBgColor] = useState('bg-secondary')
 
-  const filterCars = (carFilter: string, index: number | string) => {
+  useEffect(() => {
+    const allCarsBtn = document.getElementById('All Cars')
+    allCarsBtn?.classList.add('active')
+  }, [])
+
+  const filterCars = (e: any, carFilter: string) => {
     const carsFiltered = cars.filter(car => car.type == carFilter)
     if (carsFiltered.length == 0) {
       setCarList(cars)
     } else {
       setCarList(carsFiltered)
     }
+
+    const allBtns: HTMLCollectionOf<Element> = document.getElementsByClassName('active')
+
+    for (let btn of allBtns) {
+      btn.classList.remove("active");
+    }
+
+    e.target.classList.add('active')
   }
-
-
 
   return (
     <main className="xl:flex md:w-[88%]">
@@ -41,7 +51,7 @@ export default function Home() {
           <ul className="flex flex-wrap gap-2 mt-10 md:mb-0 items-center">
             {carFilters.map((carFilter, index) => (
               <li key={index}>
-                <button className={`${bgColor} text-sm md:text-md lg:text-lg p-2 px-8 rounded-full`} onClick={() => filterCars(carFilter, index)}>{carFilter}</button>
+                <button className="bg-secondary text-sm md:text-md lg:text-lg p-2 px-8 rounded-full" id={carFilter} onClick={(e) => filterCars(e, carFilter)}>{carFilter}</button>
               </li>
             ))}
             <li>
