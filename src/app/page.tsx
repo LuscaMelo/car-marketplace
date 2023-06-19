@@ -11,9 +11,9 @@ export default function Home() {
   const carFilters: string[] = ['All Cars', 'Electric', 'Gasoline', 'Hybrid']
 
   const [carList, setCarList] = useState(cars)
-  const [bgColor, setBgColor] = useState('bg-light text-sm md:text-md lg:text-lg p-2 px-8 rounded-full')
+  const [bgColor, setBgColor] = useState('bg-secondary')
 
-  const filterCars = (carFilter: string) => {
+  const filterCars = (carFilter: string, index: number | string) => {
     const carsFiltered = cars.filter(car => car.type == carFilter)
     if (carsFiltered.length == 0) {
       setCarList(cars)
@@ -22,13 +22,6 @@ export default function Home() {
     }
   }
 
-  const changeBg = (e: any) => {
-    e.target.classList.add('active')
-  }
-
-  const removeBg = (e: any) => {
-    e.target.classList.remove('active')
-  }
 
 
   return (
@@ -48,7 +41,7 @@ export default function Home() {
           <ul className="flex flex-wrap gap-2 mt-10 md:mb-0 items-center">
             {carFilters.map((carFilter, index) => (
               <li key={index}>
-                <button className={bgColor} onClick={() => filterCars(carFilter)} onFocus={(e) => changeBg(e)} onBlur={(e) => removeBg(e)}>{carFilter}</button>
+                <button className={`${bgColor} text-sm md:text-md lg:text-lg p-2 px-8 rounded-full`} onClick={() => filterCars(carFilter, index)}>{carFilter}</button>
               </li>
             ))}
             <li>

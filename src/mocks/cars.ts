@@ -1,17 +1,17 @@
 export const cars = [
     {
         id: "1",
-        name: "Volvo EX30",
-        type: "Electric",
-        ratio: 4.8,
-        image: "/volvo-ex30.jpg"
+        name: "Porshe GT3 RS",
+        type: "Gasoline",
+        ratio: 4.9,
+        image: "/porshe.jpg"
     },
     {
         id: "2",
-        name: "Volvo XC90",
-        type: "Gasoline",
+        name: "Volvo XC40",
+        type: "Hybrid",
         ratio: 4.7,
-        image: "/volvo-xc90.jpg"
+        image: "/volvo-xc40.jpg"
     },
     {
         id: "3",
@@ -22,7 +22,7 @@ export const cars = [
     },
     {
         id: "4",
-        name: "Corvette z06",
+        name: "Corvette Z06",
         type: "Gasoline",
         ratio: 4.5,
         image: "/corvette.jpg"
@@ -36,30 +36,30 @@ export const cars = [
     },
     {
         id: "6",
-        name: "Volvo XC60",
+        name: "Land Hover Velar",
         type: "Hybrid",
-        ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        ratio: 5.0,
+        image: "/velar.jpg"
     },
     {
         id: "7",
-        name: "Volvo XC60",
-        type: "Hybrid",
+        name: "Ferrari SF90",
+        type: "Gasoline",
         ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        image: "/ferrari.jpeg"
     },
     {
         id: "8",
-        name: "Volvo XC60",
-        type: "Hybrid",
+        name: "Audi E-Tron GT",
+        type: "Electric",
         ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        image: "/audi-etron.jpg"
     },
     {
         id: "9",
-        name: "Volvo XC60",
-        type: "Hybrid",
-        ratio: 4.9,
-        image: "/volvo-xc60.jpg"
+        name: "Volvo EX30",
+        type: "Electric",
+        ratio: 4.8,
+        image: "/volvo-ex30.jpg"
     },
 ]
