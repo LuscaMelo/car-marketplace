@@ -26,7 +26,7 @@ export const SmallCard = (props: iProps) => {
                     isLiked ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
                 }
             </div>
-            <Image fill className="w-full object-cover rounded-3xl" src={props.image} alt="volvo ex30 image" />
+            <Image width={1000} height={1000} className="w-full object-cover rounded-3xl" src={props.image} alt="volvo ex30 image" />
             <div className='absolute h-full w-full bg-black opacity-0 hover:opacity-80 duration-300 rounded-3xl border-2 border-blue-200'>
                 <div className='flex flex-col justify-between p-10 mt-8'>
                     <div className='flex w-full justify-between'>
