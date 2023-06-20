@@ -1,10 +1,10 @@
 export const cars = [
     {
         id: "1",
-        name: "Porshe GT3 RS",
+        name: "Porsche GT3 RS",
         type: "Gasoline",
         ratio: 4.9,
-        image: "/porshe.jpg"
+        image: "/porsche.jpg"
     },
     {
         id: "2",

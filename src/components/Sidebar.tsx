@@ -7,12 +7,14 @@ import { useContext } from 'react'
 
 export const Sidebar = () => {
 
+    const [active, setActive] = useState('bg-gray-600 text-white')
+
     const { isFavorite, handleLike } = useContext(FavoriteContext)
 
     return (
         <div className='flex items-center justify-end md:justify-center pr-6 md:pr-0 h-full w-full text-2xl z-10'>
             <ul className='flex md:flex-col gap-1 md:gap-7 text-gray-400'>
-                <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>
+                <li className={`${active} hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300`}>
                     <AiFillHome />
                 </li>
                 <li className='hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300'>

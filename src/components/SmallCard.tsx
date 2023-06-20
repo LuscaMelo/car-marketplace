@@ -1,14 +1,16 @@
 "use client"
 
 import Image from 'next/image'
-import { AiFillStar, AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { AiFillStar, AiOutlineHeart, AiFillHeart, AiOutlineArrowRight } from 'react-icons/ai'
 import { useState } from 'react'
+import Link from 'next/link'
 
 interface iProps {
     image: string,
     name: string,
     type: string,
-    ratio: number
+    ratio: number,
+    id: string
 }
 
 export const SmallCard = (props: iProps) => {
@@ -27,23 +29,27 @@ export const SmallCard = (props: iProps) => {
                 }
             </div>
             <Image width={1000} height={1000} className="w-full object-cover rounded-3xl" src={props.image} priority alt={props.name} />
-            <div className='absolute top-0 h-full w-full bg-black opacity-0 hover:opacity-80 duration-300 rounded-3xl border-2 border-blue-200'>
-                <div className='flex flex-col justify-between p-10 mt-8'>
-                    <div className='flex w-full justify-between'>
-                        <div>
-                            <h4 className='font-bold text-lg text-white'>{props.name}</h4>
-                            <p className='font-bold text-blue-300'>{props.type}</p>
+            <Link href={`/cars/${props.id}`}>
+                <div className='absolute top-0 h-full w-full bg-black opacity-0 hover:opacity-80 duration-300 rounded-3xl border-2 border-blue-200'>
+                    <div className='flex flex-col justify-between p-10 mt-8'>
+                        <div className='flex w-full justify-between'>
+                            <div>
+                                <h4 className='font-bold text-lg text-white'>{props.name}</h4>
+                                <p className='font-bold text-blue-300'>{props.type}</p>
+                            </div>
+                            <div className="flex items-center mt-2">
+                                <AiFillStar className='text-yellow-500 text-md' />
+                                <span className='text-sm ml-1 font-semibold'>{props.ratio}</span>
+                            </div>
                         </div>
-                        <div className="flex items-center mt-2">
-                            <AiFillStar className='text-yellow-500 text-md' />
-                            <span className='text-sm ml-1 font-semibold'>{props.ratio}</span>
+                        <div className='mt-8'>
+                            <button className='flex gap-2 items-center py-1 px-4 bg-blue-300 rounded-3xl text-black text-sm font-bold'>
+                                Show Details <AiOutlineArrowRight className='font-bold' />
+                            </button>
                         </div>
-                    </div>
-                    <div className='mt-8'>
-                        <button className='py-1 px-4 bg-blue-300 rounded-3xl text-black text-sm font-bold'>Order Now</button>
                     </div>
                 </div>
-            </div>
+            </Link>
         </div>
     )
 }
