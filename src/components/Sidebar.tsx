@@ -12,7 +12,7 @@ export const Sidebar = () => {
     const { isFavorite, handleLike } = useContext(FavoriteContext)
 
     return (
-        <div className='flex items-center justify-end md:justify-center pr-6 md:pr-0 h-full w-full text-2xl z-10'>
+        <div className='flex items-center justify-end md:justify-center pr-6 md:pr-0 h-full w-full text-2xl z-10 max-w-[200px]'>
             <ul className='flex md:flex-col gap-1 md:gap-7 text-gray-400'>
                 <li className={`${active} hover:bg-gray-600 hover:text-gray-100 p-2 rounded-xl cursor-pointer md:duration-300`}>
                     <AiFillHome />

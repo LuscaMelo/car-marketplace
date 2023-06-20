@@ -10,7 +10,8 @@ interface iProps {
     name: string,
     type: string,
     ratio: number,
-    id: string
+    id: string,
+    description?: string
 }
 
 export const SmallCard = (props: iProps) => {
