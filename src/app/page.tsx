@@ -64,7 +64,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 mt-8 w-full px-7 md:px-0">
           {
             carList.map(car => (
-              <SmallCard key={car.id} image={car.image} name={car.name} type={car.type} ratio={car.ratio} id={car.id} description={car.description} />
+              <SmallCard key={car.id} thumb={car.thumb} name={car.name} type={car.type} ratio={car.ratio} id={car.id} description={car.description} />
             ))
           }
         </div>

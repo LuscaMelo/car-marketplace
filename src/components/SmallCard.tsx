@@ -6,12 +6,12 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 interface iProps {
-    image: string,
+    thumb: string,
     name: string,
     type: string,
     ratio: number,
     id: string,
-    description?: string
+    description: string
 }
 
 export const SmallCard = (props: iProps) => {
@@ -29,7 +29,7 @@ export const SmallCard = (props: iProps) => {
                     isLiked ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
                 }
             </div>
-            <Image width={1000} height={1000} className="w-full object-cover rounded-3xl" src={props.image} priority alt={props.name} />
+            <Image width={1000} height={1000} className="w-full object-cover rounded-3xl" src={props.thumb} priority alt={props.name} />
             <Link href={`/cars/${props.id}`}>
                 <div className='absolute top-0 h-full w-full bg-black opacity-0 hover:opacity-80 duration-300 rounded-3xl border-2 border-blue-200'>
                     <div className='flex flex-col justify-between p-10 mt-8'>
