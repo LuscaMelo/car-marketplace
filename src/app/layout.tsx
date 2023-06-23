@@ -2,6 +2,8 @@ import { Sidebar } from '@/components/Sidebar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
+import { CarsProvider } from '@/contexts/CarsContext'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -18,12 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='md:flex'>
-          <nav className='bg-dark md:bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
-            <Sidebar />
-          </nav>
-          {children}
-        </div>
+        <CarsProvider>
+          <div className='md:flex'>
+            <nav className='bg-dark md:bg-secondary sticky top-0 w-[100%] h-[10vh] md:w-[8%] md:h-[100vh] z-50'>
+              <Sidebar />
+            </nav>
+            {children}
+          </div>
+        </CarsProvider>
       </body>
     </html>
   )

@@ -3,36 +3,28 @@
 import { BigCard } from '@/components/BigCard'
 import { SmallCard } from '@/components/SmallCard'
 import { AiOutlinePlus } from 'react-icons/ai'
-import { cars } from '../mocks/cars'
-import { useEffect, useState } from 'react'
+import { useEffect, useContext } from 'react'
+import { CarsContext } from '@/contexts/CarsContext'
+
+type iCar = {
+  id: string,
+  thumb: string,
+  name: string,
+  type: string,
+  ratio: number,
+  description: string,
+  favorite: boolean
+}
 
 export default function Home() {
+  const { carList, filterCars }: any = useContext(CarsContext)
 
   const carFilters: string[] = ['All Cars', 'Electric', 'Gasoline', 'Hybrid']
-
-  const [carList, setCarList] = useState(cars)
 
   useEffect(() => {
     const allCarsBtn = document.getElementById('All Cars')
     allCarsBtn?.classList.add('active')
   }, [])
-
-  const filterCars = (e: any, carFilter: string) => {
-    const carsFiltered = cars.filter(car => car.type == carFilter)
-    if (carsFiltered.length == 0) {
-      setCarList(cars)
-    } else {
-      setCarList(carsFiltered)
-    }
-
-    const allBtns: HTMLCollectionOf<Element> = document.getElementsByClassName('active')
-
-    for (let btn of allBtns) {
-      btn.classList.remove("active");
-    }
-
-    e.target.classList.add('active')
-  }
 
   return (
     <main className="xl:flex md:w-[88%]">
@@ -63,8 +55,8 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-4 mt-8 w-full px-7 md:px-0">
           {
-            carList.map(car => (
-              <SmallCard key={car.id} thumb={car.thumb} name={car.name} type={car.type} ratio={car.ratio} id={car.id} description={car.description} />
+            carList.map((car: iCar) => (
+              <SmallCard key={car.id} thumb={car.thumb} name={car.name} type={car.type} ratio={car.ratio} id={car.id} description={car.description} favorite={car.favorite} />
             ))
           }
         </div>

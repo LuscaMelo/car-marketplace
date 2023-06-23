@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import { AiFillStar, AiOutlineHeart, AiFillHeart, AiOutlineArrowRight } from 'react-icons/ai'
-import { useState } from 'react'
 import Link from 'next/link'
+import { useContext, useState } from 'react'
+import { CarsContext } from '@/contexts/CarsContext'
 
 interface iProps {
     thumb: string,
@@ -12,21 +13,25 @@ interface iProps {
     ratio: number,
     id: string,
     description: string
+    favorite: boolean
 }
 
 export const SmallCard = (props: iProps) => {
 
-    const [isLiked, setIsLiked] = useState(false)
+    const { setFavorite }: any = useContext(CarsContext)
 
-    const handleLike = () => {
-        setIsLiked(!isLiked)
+    const [liked, setLiked] = useState(false)
+
+    const handleFavorite = () => {
+        setFavorite(props.id)
+        setLiked(!liked)
     }
 
     return (
         <div className="relative w-[100%] bg-secondary rounded-3xl overflow-hidden h-[280px] cursor-pointer" >
-            <div className="absolute top-3 left-3 rounded-full p-2 bg-light cursor-pointer text-xl z-40" onClick={handleLike}>
+            <div className="absolute top-3 left-3 rounded-full p-2 bg-light cursor-pointer text-xl z-40" onClick={() => handleFavorite()}>
                 {
-                    isLiked ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
+                    props.favorite || liked ? <AiFillHeart className="text-red-500" /> : <AiOutlineHeart />
                 }
             </div>
             <Image width={1000} height={1000} className="w-full object-cover rounded-3xl" src={props.thumb} priority alt={props.name} />

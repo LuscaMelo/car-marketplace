@@ -1,6 +1,7 @@
 export const cars = [
     {
         id: "1",
+        favorite: false,
         name: "Porsche GT3 RS",
         type: "Gasoline",
         ratio: 4.9,
@@ -10,6 +11,7 @@ export const cars = [
     },
     {
         id: "2",
+        favorite: false,
         name: "Volvo XC40",
         type: "Hybrid",
         ratio: 4.7,
@@ -19,6 +21,7 @@ export const cars = [
     },
     {
         id: "3",
+        favorite: false,
         name: "Volvo XC60",
         type: "Electric",
         ratio: 4.9,
@@ -28,6 +31,7 @@ export const cars = [
     },
     {
         id: "4",
+        favorite: false,
         name: "Corvette Z06",
         type: "Gasoline",
         ratio: 4.5,
@@ -37,6 +41,7 @@ export const cars = [
     },
     {
         id: "5",
+        favorite: false,
         name: "Toyota GR86",
         type: "Gasoline",
         ratio: 4.8,
@@ -46,6 +51,7 @@ export const cars = [
     },
     {
         id: "6",
+        favorite: false,
         name: "Range Rover Velar",
         type: "Hybrid",
         ratio: 4.7,
@@ -55,6 +61,7 @@ export const cars = [
     },
     {
         id: "7",
+        favorite: false,
         name: "Ferrari SF90",
         type: "Gasoline",
         ratio: 4.9,
@@ -64,6 +71,7 @@ export const cars = [
     },
     {
         id: "8",
+        favorite: false,
         name: "Audi E-Tron GT",
         type: "Electric",
         ratio: 4.9,
@@ -73,6 +81,7 @@ export const cars = [
     },
     {
         id: "9",
+        favorite: false,
         name: "Volvo EX30",
         type: "Electric",
         ratio: 4.8,
